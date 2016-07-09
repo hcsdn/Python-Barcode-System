@@ -63,6 +63,7 @@
     <Folder Include="basic\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\register.html" />
     <Content Include="basic\templates\index.html" />
     <Content Include="basic\templates\list_barcodes.html" />
     <Content Include="requirements.txt" />

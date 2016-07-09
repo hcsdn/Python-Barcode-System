@@ -16,3 +16,30 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+class RegisterForm(forms.Form):
+   username=forms.CharField(max_length=254,
+                            widget=forms.TextInput({
+                                'class':'form-control',
+                                'placeholder':''}))
+   password = forms.CharField(label=_("Password"),
+                               widget=forms.PasswordInput({
+                                   'class': 'form-control',
+                                   'placeholder':'Password'}))
+   confirmedpassword = forms.CharField(label=_("Password"),
+                               widget=forms.PasswordInput({
+                                   'class': 'form-control',
+                                   'placeholder':'ConfirmedPassword'}))
+   email = forms.CharField(label=_("Password"),
+                               widget=forms.EmailInput({
+                                   'class': 'form-control',
+                                   'placeholder':'Email'}))
+   
+   firstname=forms.CharField(max_length=254,
+                            widget=forms.TextInput({
+                                'class':'form-control',
+                                'placeholder':''}))
+   lastname=forms.CharField(max_length=254,
+                            widget=forms.TextInput({
+                                'class':'form-control',
+                                'placeholder':''}))
+ 
