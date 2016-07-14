@@ -20,7 +20,7 @@ class RegisterForm(forms.Form):
    username=forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
-                                'placeholder':''}))
+                                'placeholder':'User Name'}))
    password = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
@@ -28,7 +28,7 @@ class RegisterForm(forms.Form):
    confirmedpassword = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
-                                   'placeholder':'ConfirmedPassword'}))
+                                   'placeholder':'Confirmed Password'}))
    email = forms.CharField(label=_("Password"),
                                widget=forms.EmailInput({
                                    'class': 'form-control',
@@ -37,9 +37,9 @@ class RegisterForm(forms.Form):
    firstname=forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
-                                'placeholder':''}))
+                                'placeholder':'First Name'}))
    lastname=forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
-                                'placeholder':''}))
+                                'placeholder':'Last Name'}))
  

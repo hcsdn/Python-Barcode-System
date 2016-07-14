@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BarcodeSystem", "BarcodeSystem\BarcodeSystem.pyproj", "{521A86ED-0317-461D-8289-F7242DDDB9C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6677987-C84F-4F32-A92D-F639B73CE115}"
+	ProjectSection(SolutionItems) = preProject
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

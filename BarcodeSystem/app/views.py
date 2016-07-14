@@ -52,3 +52,17 @@ def register(request):
             'message':'Register a new account.',
             'year':datetime.now().year,
         })
+
+def saveUser(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    form = RegisterForm(request.POST or None)
+
+    return render(request,
+        'app/register.html',       
+        {
+            'form':form,
+            'title':'Register',
+            'message':'Register a new account.',
+            'year':datetime.now().year,
+        })
