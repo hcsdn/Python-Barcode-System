@@ -40,41 +40,41 @@ def about(request):
             'year':datetime.now().year,
         })
 
-def register(request):
-    """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    form = RegisterForm(request.POST or None)
-    return render(request,
-        'app/register.html',       
-        {
-            'form':form,
-            'title':'Register',
-            'message':'Register a new account.',
-            'year':datetime.now().year,
-        })
+#def register(request):
+#    """Renders the about page."""
+#    assert isinstance(request, HttpRequest)
+#    form = RegisterForm(request.POST or None)
+#    return render(request,
+#        'app/register.html',       
+#        {
+#            'form':form,
+#            'title':'Register',
+#            'message':'Register a new account.',
+#            'year':datetime.now().year,
+#        })
 
-def saveUser(request):
-    """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    form = RegisterForm(request.POST or None)
-    form.username = request.POST.get("username")
-    isValid = form.is_valid()
-    if(isValid == False):
-        return render(request,
-            'app/register.html',       
-            {
-                'form':form,
-                'title':'Register',
-                'year':datetime.now().year,
-            })
+#def saveUser(request):
+#    """Renders the about page."""
+#    assert isinstance(request, HttpRequest)
+#    form = RegisterForm(request.POST or None)
+#    form.username = request.POST.get("username")
+#    isValid = form.is_valid()
+#    if(isValid == False):
+#        return render(request,
+#            'app/register.html',       
+#            {
+#                'form':form,
+#                'title':'Register',
+#                'year':datetime.now().year,
+#            })
 
-    user=form.saveUser()
+#    user=form.saveUser()
     
-    return render(request,
-        'app/register.html',       
-        {
-            'form':form,
-            'title':'Register',
-            'message':'Register successed!',
-            'year':datetime.now().year,
-        })
+#    return render(request,
+#        'app/register.html',       
+#        {
+#            'form':form,
+#            'title':'Register',
+#            'message':'Register successed!',
+#            'year':datetime.now().year,
+#        })

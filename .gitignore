@@ -246,3 +246,6 @@ ModelManifest.xml
 __pycache__
 /BarcodeSystem/BarcodeSystem/__pycache__
 __pycache__
+__pycache__
+/BarcodeSystem/web.debug.config
+__pycache__
