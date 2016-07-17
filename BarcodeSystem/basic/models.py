@@ -1,16 +1,19 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
-
 class barcode(models.Model):
     id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=10)
     controller = models.CharField(max_length=300)
-    createddate = models.DateTimeField()
+    createddate = models.DateTimeField(default=datetime.now())
     createdby = models.CharField(max_length=50)
-    lastmodifieddate = models.DateTimeField()
+    lastmodifieddate = models.DateTimeField(default=datetime.now())
     lastmodifiedby = models.CharField(max_length=50)
-   
+
+    fields = ('description','controller',)
+    list_display = ('id', 'description', 'controller',)
+
 class Region(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
@@ -19,10 +22,10 @@ class Region(models.Model):
     createdby = models.CharField(max_length=50)
     lastmodifieddate = models.DateTimeField()
     lastmodifiedby = models.CharField(max_length=50)
-
+ 
 
 class WorkShift(models.Model):
-    id= models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     region = models.ForeignKey(Region)
@@ -30,3 +33,5 @@ class WorkShift(models.Model):
     createdby = models.CharField(max_length=50)
     lastmodifieddate = models.DateTimeField()
     lastmodifiedby = models.CharField(max_length=50)
+ 
+
