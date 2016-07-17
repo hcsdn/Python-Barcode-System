@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>BarcodeSystem</Name>
     <RootNamespace>BarcodeSystem</RootNamespace>
-    <IsWindowsApplication>True</IsWindowsApplication>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -63,7 +63,6 @@
     <Folder Include="basic\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\app\register.html" />
     <Content Include="basic\templates\index.html" />
     <Content Include="basic\templates\list_barcodes.html" />
     <Content Include="requirements.txt" />

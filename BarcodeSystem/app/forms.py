@@ -3,7 +3,10 @@ Definition of forms.
 """
 
 from django import forms
+from app.models import User
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 
 class BootstrapAuthenticationForm(AuthenticationForm):
@@ -16,16 +19,17 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
-class RegisterForm(forms.Form):
-   username=forms.CharField(max_length=254,
+
+class RegisterForm(UserCreationForm):
+   username = forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
                                 'placeholder':'User Name'}))
-   password = forms.CharField(label=_("Password"),
+   password1 = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
-   confirmedpassword = forms.CharField(label=_("Password"),
+   password2 = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Confirmed Password'}))
@@ -34,12 +38,22 @@ class RegisterForm(forms.Form):
                                    'class': 'form-control',
                                    'placeholder':'Email'}))
    
-   firstname=forms.CharField(max_length=254,
+   first_name = forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
                                 'placeholder':'First Name'}))
-   lastname=forms.CharField(max_length=254,
+   last_name = forms.CharField(max_length=254,
                             widget=forms.TextInput({
                                 'class':'form-control',
                                 'placeholder':'Last Name'}))
+   class Meta:
+       model = User
+       fields = ("username",)
+
+   def saveUser(self):
+        user = super(RegisterForm, self).save()
+        user.save()
+        return user
+   
+        
  

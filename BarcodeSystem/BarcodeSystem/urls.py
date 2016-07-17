@@ -34,9 +34,8 @@ urlpatterns = [
             }
         },
         name='login'),
-    url(r'^register$',    
-        app.views.register,
-        name='register'),
+    url(r'^register$',app.views.register,name='register'),
+    url(r'^saveUser$',app.views.saveUser,name='saveUser'),
     url(r'^logout$',
         django.contrib.auth.views.logout,
         {

@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+__pycache__
+/BarcodeSystem/BarcodeSystem/__pycache__
+__pycache__

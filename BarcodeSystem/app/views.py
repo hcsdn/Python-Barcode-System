@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-from app.forms import RegisterForm
+#from app.forms import RegisterForm
 
 def home(request):
     """Renders the home page."""
@@ -57,12 +57,24 @@ def saveUser(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
     form = RegisterForm(request.POST or None)
+    form.username = request.POST.get("username")
+    isValid = form.is_valid()
+    if(isValid == False):
+        return render(request,
+            'app/register.html',       
+            {
+                'form':form,
+                'title':'Register',
+                'year':datetime.now().year,
+            })
 
+    user=form.saveUser()
+    
     return render(request,
         'app/register.html',       
         {
             'form':form,
             'title':'Register',
-            'message':'Register a new account.',
+            'message':'Register successed!',
             'year':datetime.now().year,
         })
