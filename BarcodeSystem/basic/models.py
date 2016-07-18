@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.admin import ModelAdmin
 from datetime import datetime
 
 # Create your models here.
@@ -10,9 +11,6 @@ class barcode(models.Model):
     createdby = models.CharField(max_length=50)
     lastmodifieddate = models.DateTimeField(default=datetime.now())
     lastmodifiedby = models.CharField(max_length=50)
-
-    fields = ('description','controller',)
-    list_display = ('id', 'description', 'controller',)
 
 class Region(models.Model):
     id = models.AutoField(primary_key=True)
